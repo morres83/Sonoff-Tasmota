@@ -181,6 +181,7 @@ enum SupportedModules {
   ARILUX_LC06,
   SONOFF_S31,
   ZENGGE_ZF_WF017,
+  WUPS,
   MAXMODULE };
 
 /********************************************************************************************/
@@ -240,7 +241,8 @@ const uint8_t kNiceList[MAXMODULE] PROGMEM = {
   KMC_70011,
   AILIGHT,
   WEMOS,
-  WITTY
+  WITTY,
+  WUPS
 };
 
 // Default module settings
@@ -804,7 +806,21 @@ const mytmplt kModules[MAXMODULE] PROGMEM = {
      GPIO_PWM1,        // GPIO13 RGB LED Red
      GPIO_PWM3,        // GPIO14 RGB LED Blue
      0, 0, 0
-  }
+  },
+  { "WUPS",    // WUPS
+   0,        //
+   0,
+   0,        // GPIO02 Empty pad
+   0,
+   GPIO_SWT2,        // GPIO04 Button2
+   GPIO_SWT1,     //GPIO05 Button1
+   0, 0, 0, 0, 0, 0, // Flash connection
+   GPIO_REL1,        // GPIO12 Relay1
+   GPIO_LED1_INV,        // GPIO13 LED
+   GPIO_DSB,        // GPIO14 Temperature
+   0,
+   GPIO_REL2, 0
+}
 };
 
 /*
